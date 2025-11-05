@@ -2,7 +2,13 @@
 // config.php
 // Configuración global: sesiones, funciones de archivos, CSRF, sanitización y logging.
 
+const ROOT = "/PROYECTOPHP";
+const COMPANY = "Proveçana";
+const AUTORS = "Khawar y Wenfu";
+
 session_start(); // iniciar sesión siempre
+
+
 
 // --- CSRF ---
 function generarTokenCSRF(): string {

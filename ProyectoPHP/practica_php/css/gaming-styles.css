@@ -2,42 +2,22 @@
   --bg:#0b0f14;
   --card:#0f1720;
   --text:#e6f0ff;
-  --accent-magenta:#7b2cff;
-  --accent-cyan:#00ffd5;
-  --accent-lime:#7cff00;
-  --muted:#9aa6b2;
-  font-family: 'Rajdhani', sans-serif;
 }
 body.theme-dark{
   background: linear-gradient(180deg, #05060A 0%, var(--bg) 100%);
   color:var(--text);
   margin:0;padding:0;
 }
-.header-fixed{position:fixed;top:0;left:0;right:0;background:rgba(5,7,12,0.85);backdrop-filter:blur(6px);padding:12px 20px;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.03)}
+
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-family:'Orbitron',sans-serif;color:var(--accent-magenta);font-weight:700}
 .main-nav a{margin:0 8px;color:var(--muted);text-decoration:none}
-.main-nav a:hover{color:var(--text)}
-.user-info{font-size:14px}
 .container{padding:90px 20px 80px;max-width:1100px;margin:0 auto}
 .footer-fixed{position:fixed;bottom:0;left:0;right:0;background:rgba(5,7,12,0.85);padding:10px 20px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between}
 .home-content h1{font-size:28px;color:var(--accent-cyan)}
 .avatars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin-top:12px}
 .avatar-card{background:var(--card);padding:8px;border-radius:12px;text-align:center;transition:transform .15s}
 .avatar-card img{width:80px;height:80px;object-fit:cover;border-radius:8px}
-.err{color:#ff6b6b}
 .success{color:#7cff00}
-.form-username input[type="text"]{padding:8px;margin-right:8px}
-.form-username button{padding:8px 12px;background:var(--accent-magenta);border:none;color:#fff;border-radius:8px}
 .form-challenge input[type="number"]{padding:6px}
 .winners{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .winner-card{background:var(--card);padding:8px;border-radius:8px;text-align:center;width:120px}
-.featured-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.featured-card{width:140px;background:linear-gradient(90deg, rgba(123,44,255,0.08), rgba(0,255,213,0.03));padding:8px;border-radius:10px;text-align:center}
-.teams{display:flex;gap:20px;flex-wrap:wrap}
-.team{flex:1;min-width:280px;background:var(--card);padding:12px;border-radius:10px}
-.card{display:flex;gap:8px;align-items:center;padding:6px;background:rgba(255,255,255,0.02);margin:6px;border-radius:8px}
-.card img{width:48px;height:48px;border-radius:6px}
-.table{width:100%;border-collapse:collapse;background:var(--card);margin-top:12px}
-.table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03)}
-.podium{display:flex;align-items:center;gap:8px;padding:6px;background:rgba(255,255,255,0.02);border-radius:8px;margin:6px}
