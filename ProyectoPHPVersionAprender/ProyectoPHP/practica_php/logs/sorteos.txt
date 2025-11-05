@@ -1,0 +1,14 @@
+2025-11-05 12:16:23 | viewers=100 | ganadores=6 | lista=
+2025-11-05 12:19:38 | viewers=100 | ganadores=10 | lista=
+2025-11-05 12:50:45 | viewers=60 | ganadores=6 | lista=shiro.jpg,xokas.jpg,Axozer.jpg,auron.jpg,mario.jpg,lolito.jpg
+2025-11-05 13:13:56 | viewers=123 | ganadores=5 | lista=willy.jpg,vegetta.jpg,staxx.jpg,elmillor.png,spurs.jpg
+2025-11-05 13:14:16 | viewers=123 | ganadores=5 | lista=ibai.jpg,folagor.jpg,Axozer.jpg,werlyb.jpg,lolito.jpg
+2025-11-05 13:14:24 | viewers=123 | ganadores=6 | lista=knekro.jpg,xokas.jpg,lolito.jpg,auron.jpg,spreen.jpg,rubius.jpg
+2025-11-05 13:14:31 | viewers=123 | ganadores=10 | lista=grefg.jpg,lolito.jpg,staxx.jpg,auron.jpg,spurs.jpg,illojuan.jpg,spreen.jpg,shiro.jpg,Axozer.jpg,mario.jpg
+2025-11-05 13:14:37 | viewers=123 | ganadores=9 | lista=knekro.jpg,ibai.jpg,illojuan.jpg,willy.jpg,shiro.jpg,xokas.jpg,folagor.jpg,mario.jpg,Axozer.jpg
+2025-11-05 13:14:42 | viewers=60 | ganadores=5 | lista=spreen.jpg,Axozer.jpg,folagor.jpg,knekro.jpg,xokas.jpg
+2025-11-05 13:14:47 | viewers=60 | ganadores=6 | lista=lolito.jpg,knekro.jpg,mario.jpg,illojuan.jpg,rubius.jpg,werlyb.jpg
+2025-11-05 13:15:01 | viewers=60 | ganadores=6 | lista=shiro.jpg,spreen.jpg,lolito.jpg,werlyb.jpg,ibai.jpg,knekro.jpg
+2025-11-05 13:15:06 | viewers=54 | ganadores=5 | lista=mario.jpg,spreen.jpg,folagor.jpg,viruzz.png,auron.jpg
+2025-11-05 13:15:32 | viewers=70 | ganadores=6 | lista=viruzz.png,spurs.jpg,elmillor.png,lolito.jpg,vegetta.jpg,staxx.jpg
+2025-11-05 13:16:27 | viewers=87 | ganadores=8 | lista=illojuan.jpg,spreen.jpg,werlyb.jpg,willy.jpg,grefg.jpg,rubius.jpg,mario.jpg,shiro.jpg
