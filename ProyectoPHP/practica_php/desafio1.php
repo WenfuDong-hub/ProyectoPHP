@@ -1,70 +1,91 @@
 <?php
-// desafio1.php
-require_once 'config.php';
-require_once 'functions-structure.php';
+include 'config.php';
 
-$errores = [];
-$exito = '';
-$ganadores_list = [];
+// Verificar que el usuario esté logueado
+if (!isset($_SESSION['username_gamer'])) {
+    header('Location: index.php');
+    exit;
+}
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $token = $_POST['csrf_token'] ?? '';
-    if (!comprobarTokenCSRF($token)) {
-        $errores[] = 'Token CSRF inválido.';
+$error = '';
+$resultado = '';
+$ganadores = [];
+
+// Condicion que se ejecuta al enviar el formulario: Realizar sorteo
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['viewers'])) {
+    $viewers = trim($_POST['viewers']);
+   
+    // Validación
+    if (empty($viewers)) {
+        $error = "¡Ops! Debes ingresar el número de viewers.";
+    } elseif (!is_numeric($viewers)) {
+        $error = "¡Ops! Debe ser un número válido.";
     } else {
-        $raw = $_POST['viewers'] ?? '';
-        $v = filter_var($raw, FILTER_VALIDATE_INT, ['options' => ['min_range' => 50, 'max_range' => 200]]);
-        if ($v === false) {
-            $errores[] = "❌ ¡Ops! El chat debe tener entre 50 y 200 viewers";
+        $viewers = (int)$viewers;
+        $viewers = filter_var($viewers, FILTER_SANITIZE_NUMBER_INT);
+       
+        if ($viewers < 50 || $viewers > 200) {
+            $error = "¡Ops! El chat debe tener entre 50 y 200 viewers.";
         } else {
-            $_SESSION['viewers_chat'] = $v;
-            // calcular N ganadores
-            $maxN = max(5, floor($v / 10));
-            $N = rand(5, $maxN);
-            // elegir N avatares aleatorios
-            $avatares = listarAvatares(20);
-            shuffle($avatares);
-            $ganadores_list = array_slice($avatares, 0, $N);
-            $exito = "Felicidades a los {$N} ganadores del sorteo";
-
-            // registrar en logs/sorteos.txt
-            $time = date('Y-m-d H:i:s');
-            $line = "{$time} | viewers={$v} | ganadores={$N} | lista=" . implode(',', $ganadores_list);
-            escribirTXT(LOGS_DIR . '/sorteos.txt', $line, true);
+            // Validación pasada
+            $_SESSION['viewers_chat'] = $viewers;
+           
+            // Obtener avatares directamente
+            $avatares = glob('images/streamers/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+           
+            // Verificar que hay avatares
+            if (empty($avatares)) {
+                $error = "❌ Error: No se encontraron avatares en la carpeta 'images/streamers/'.";
+            } else {
+                // Calcular número de ganadores (entre 5 y viewers/10)
+                $max_ganadores = max(5, floor($viewers / 10));
+                $max_ganadores = min($max_ganadores, count($avatares));
+                $num_ganadores = rand(5, $max_ganadores);
+               
+                $resultado = "¡Felicidades a los $num_ganadores ganadores del sorteo!";
+               
+                // Seleccionar avatares aleatorios
+                $indices_aleatorios = array_rand($avatares, $num_ganadores);
+               
+                // Si solo hay un ganador, array_rand devuelve un escalar
+                if ($num_ganadores == 1) {
+                    $ganadores = [$avatares[$indices_aleatorios]];
+                } else {
+                    $ganadores = [];
+                    foreach ($indices_aleatorios as $indice) {
+                        $ganadores[] = $avatares[$indice];
+                    }
+                }
+               
+                // Guardar en log
+                $fecha = date('Y-m-d H:i:s');
+                $log_msg = "[$fecha] Sorteo - Viewers: $viewers, Ganadores: $num_ganadores";
+                escribirTXT('logs/sorteos.txt', $log_msg);
+               
+                // Marcar desafío como completado
+                if (!in_array(1, $_SESSION['desafios_completados'])) {
+                    $_SESSION['desafios_completados'][] = 1;
+                    $_SESSION['nivel_usuario']++;
+                }
+            }
         }
     }
 }
 
-myHeader();
+// Funciones header y footer
+mostrarHeader("Desafío 1 - Chat Rápido");
 ?>
 
-<section class="challenge">
-  <h1>Desafío 1 - Sorteo del Chat</h1>
-
-  <?php if (!empty($errores)): ?>
-    <?php foreach ($errores as $e): ?>
-        <p class='err'><?php echo $e; ?></p>
-    <?php endforeach; ?>
-  <?php endif; ?>
-
-  <form method="post" action="desafio1.php" class="form-challenge">
-    <input type="hidden" name="csrf_token" value="<?php echo generarTokenCSRF(); ?>">
-    <label>¿Cuántos viewers hay en el chat? <input type="number" name="viewers" min="50" max="200" required></label>
-    <small>Debe ser un número entre 50 y 200</small>
-    <button type="submit">Realizar sorteo</button>
-  </form>
-
-  <?php if ($exito): ?>
-    <div class="success"><p><?php echo $exito; ?></p></div>
-    <div class="winners">
-      <?php foreach ($ganadores_list as $g): ?>
-        <div class="winner-card">
-          <img src="images/streamers/<?php echo urlencode($g); ?>" alt="<?php echo htmlspecialchars($g); ?>">
-          <div><?php echo pathinfo($g, PATHINFO_FILENAME); ?></div>
-        </div>
-      <?php endforeach; ?>
+<main class="dashboard">
+    <h1>🎯 Desafío 1 - El Reto del Chat Rápido</h1>
+   
+    <div class="challenge-container">
+        <?php
+        formularioDesafio1($error,$resultado,$ganadores);
+        ?>
     </div>
-  <?php endif; ?>
-</section>
+</main>
 
-<?php myFooter(); ?>
+<?php
+mostrarFooter();
+?>
