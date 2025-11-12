@@ -100,7 +100,7 @@ mostrarHeader();
     <?php if (!empty($avatares)): ?>
       <?php foreach ($avatares as $nombre_avatar): ?>
         <?php
-        $ruta_web = ROOT . '/images/streamers/' . htmlspecialchars($nombre_avatar);
+        $ruta_web = 'images/streamers/' . htmlspecialchars($nombre_avatar);
         ?>
         <img src="<?= $ruta_web ?>" alt="Avatar" style="width: 150px; height: 150px; margin: 10px;">
       <?php endforeach; ?>
@@ -110,7 +110,7 @@ mostrarHeader();
     <section class="login-screen">
       <div class="login-card glass">
         <h1 class="title">🎮 Crew Streamers</h1>
-        <p class="subtitle">Elige tu <strong>username gamer</strong> para comenzar tu aventura:</p>
+        <p class="subtitle">Elige tu <strong>username gamer</strong> para comenzar:</p>
 
         <?php if (!empty($errores)): ?>
           <div class="errors">

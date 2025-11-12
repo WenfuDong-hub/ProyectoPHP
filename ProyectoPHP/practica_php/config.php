@@ -3,12 +3,15 @@
 // config.php
 // Configuración global: sesiones, funciones de archivos, CSRF, sanitización y logging.
 
-const ROOT = "/PHP/ProyectoPHP-main/ProyectoPHP/practica_php";
 const COMPANY = "Proveçana";
 const AUTORS = "Khawar y Wenfu";
 
-session_start();
+//Rutas de ficheros
+const ROOT = "/PHP/ProyectoPHP-main/ProyectoPHP/practica_php";
+const BASE_DIR = __DIR__;
+const IMAGES_STREAMERS = BASE_DIR . '/images/streamers';
 
+session_start();
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Funcion para que funcione el logout en todas las paginas
@@ -37,11 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     header('Location: index.php');
     exit;
 }
-
-//Rutas de ficheros
-
-define('BASE_DIR', __DIR__);
-const IMAGES_STREAMERS = BASE_DIR . '/images/streamers';
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Funciones para archivos
@@ -268,7 +266,7 @@ HTML;
         // Saltar el invitado especial en el listado principal
         if ($f === 'invitado_especial.png') continue;
 
-        $ruta_web = ROOT . '/images/streamers/' . htmlspecialchars($f);
+        $ruta_web = 'images/streamers/' . htmlspecialchars($f);
         $nombre = pathinfo($f, PATHINFO_FILENAME);
         $form .= <<<HTML
             <div class="avatar-card">
@@ -284,7 +282,7 @@ HTML;
 
     // Mostrar invitado especial separado
     if (in_array('invitado_especial.png', $featured)) {
-        $ruta_especial = ROOT . '/images/invitado_especial/invitado_especial.png';
+        $ruta_especial = 'images/invitado_especial/invitado_especial.png';
         $form .= <<<HTML
         <h2>Invitado Especial</h2>
         <div class="avatars-grid">
@@ -302,7 +300,7 @@ HTML;
 HTML;
 
     foreach ($avatares as $f) {
-        $ruta_web = ROOT . '/images/streamers/' . htmlspecialchars($f);
+        $ruta_web = 'images/streamers/' . htmlspecialchars($f);
         $nombre = pathinfo($f, PATHINFO_FILENAME);
         $form .= <<<HTML
             <div class="avatar-card">
@@ -319,10 +317,3 @@ HTML;
 
     echo $form;
 }
-
-
-function println($s)
-{
-    echo '<p>' . $s . '</p>';
-}
-?>
