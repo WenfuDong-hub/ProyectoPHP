@@ -1,0 +1,142 @@
+[
+    {
+        "username": "auron",
+        "nombre_real": "Raul Fern\u00e1ndez",
+        "followers": 55227,
+        "avatar": "auron.jpg",
+        "juego_favorito": "Minecraft"
+    },
+    {
+        "username": "Axozer",
+        "nombre_real": "Carlos P\u00e9rez",
+        "followers": 48959,
+        "avatar": "Axozer.jpg",
+        "juego_favorito": "Rocket League"
+    },
+    {
+        "username": "elmillor",
+        "nombre_real": "Luc\u00eda G\u00f3mez",
+        "followers": 91423,
+        "avatar": "elmillor.jpg",
+        "juego_favorito": "Among Us"
+    },
+    {
+        "username": "folagor",
+        "nombre_real": "Mario Ruiz",
+        "followers": 58094,
+        "avatar": "folagor.jpg",
+        "juego_favorito": "Among Us"
+    },
+    {
+        "username": "grefg",
+        "nombre_real": "Ana Mart\u00ednez",
+        "followers": 74360,
+        "avatar": "grefg.jpg",
+        "juego_favorito": "Among Us"
+    },
+    {
+        "username": "ibai",
+        "nombre_real": "Jos\u00e9 L\u00f3pez",
+        "followers": 25586,
+        "avatar": "ibai.jpg",
+        "juego_favorito": "Fortnite"
+    },
+    {
+        "username": "illojuan",
+        "nombre_real": "Laura S\u00e1nchez",
+        "followers": 7278,
+        "avatar": "illojuan.jpg",
+        "juego_favorito": "Fortnite"
+    },
+    {
+        "username": "knekro",
+        "nombre_real": "David Ram\u00edrez",
+        "followers": 39115,
+        "avatar": "knekro.jpg",
+        "juego_favorito": "Fortnite"
+    },
+    {
+        "username": "lolito",
+        "nombre_real": "Marta Torres",
+        "followers": 38296,
+        "avatar": "lolito.jpg",
+        "juego_favorito": "Minecraft"
+    },
+    {
+        "username": "mario",
+        "nombre_real": "Javier D\u00edaz",
+        "followers": 90335,
+        "avatar": "mario.jpg",
+        "juego_favorito": "Minecraft"
+    },
+    {
+        "username": "rubius",
+        "nombre_real": "Sof\u00eda Morales",
+        "followers": 31641,
+        "avatar": "rubius.jpg",
+        "juego_favorito": "Minecraft"
+    },
+    {
+        "username": "shiro",
+        "nombre_real": "Andr\u00e9s Herrera",
+        "followers": 18866,
+        "avatar": "shiro.jpg",
+        "juego_favorito": "Among Us"
+    },
+    {
+        "username": "spreen",
+        "nombre_real": "Isabel Castro",
+        "followers": 9614,
+        "avatar": "spreen.jpg",
+        "juego_favorito": "Fall Guys"
+    },
+    {
+        "username": "spurs",
+        "nombre_real": "Miguel Navarro",
+        "followers": 25780,
+        "avatar": "spurs.jpg",
+        "juego_favorito": "Rocket League"
+    },
+    {
+        "username": "staxx",
+        "nombre_real": "Carolina Rojas",
+        "followers": 9857,
+        "avatar": "staxx.jpg",
+        "juego_favorito": "LOL"
+    },
+    {
+        "username": "vegeta",
+        "nombre_real": "Fernando Silva",
+        "followers": 84368,
+        "avatar": "vegeta.jpg",
+        "juego_favorito": "LOL"
+    },
+    {
+        "username": "viruzz",
+        "nombre_real": "Paula Ortega",
+        "followers": 51416,
+        "avatar": "viruzz.jpg",
+        "juego_favorito": "Rocket League"
+    },
+    {
+        "username": "werlyb",
+        "nombre_real": "Ricardo V\u00e1zquez",
+        "followers": 33931,
+        "avatar": "werlyb.jpg",
+        "juego_favorito": "Valorant"
+    },
+    {
+        "username": "willy",
+        "nombre_real": "Elena Jim\u00e9nez",
+        "followers": 83736,
+        "avatar": "willy.jpg",
+        "juego_favorito": "Rocket League"
+    },
+    {
+        "username": "xokas",
+        "nombre_real": "Luis Cabrera",
+        "followers": 8620,
+        "avatar": "xokas.jpg",
+        "juego_favorito": "Minecraft"
+    }
+]

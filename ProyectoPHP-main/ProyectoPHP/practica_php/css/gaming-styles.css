@@ -1,0 +1,93 @@
+:root {
+  --bg: #0b0f14;
+  --card: #0f1720;
+  --text: #e6f0ff;
+}
+
+body.theme-dark {
+  background: linear-gradient(180deg, #05060A 0%, var(--bg) 100%);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.main-nav a {
+  margin: 0 8px;
+  color: var(--muted);
+  text-decoration: none
+}
+
+.container {
+  padding: 90px 20px 80px;
+  max-width: 1100px;
+  margin: 0 auto
+}
+
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(5, 7, 12, 0.85);
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between
+}
+
+.home-content h1 {
+  font-size: 28px;
+  color: var(--accent-cyan)
+}
+
+.avatars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 12px
+}
+
+.avatar-card {
+  background: var(--card);
+  padding: 8px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform .15s
+}
+
+.avatar-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px
+}
+
+.success {
+  color: #7cff00
+}
+
+.form-challenge input[type="number"] {
+  padding: 6px
+}
+
+.winners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px
+}
+
+.winner-card {
+  background: var(--card);
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  width: 120px
+}
